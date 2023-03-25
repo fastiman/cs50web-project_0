@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <style>
+            .container {
+                display: flex;              /* establish flex container */
+                flex-direction: column;     /* stack flex items vertically */
+                justify-content: center;    /* center items vertically, in this case */
+                align-items: center;        /* center items horizontally, in this case */
+                height: 300px;
+            }
+            .top-right {
+                align-self: start;
+                margin-left: auto;
+                padding-top: 70px;
+
+            }
+            #search-box {
+
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                align-items: center;
+                box-sizing: border-box;
+            }
+            #my_search_field {
+                width: 584px;
+                font-size: 14px;
+                font-family: arial,sans-serif;
+                color: #202124;
+                display: flex;
+                z-index: 3;
+                height: 44px;
+                background: #fff;
+                border: 1px solid #dfe1e5;
+                box-shadow: none;
+                border-radius: 24px;
+                margin: 0 auto;
+                padding: 0 20px;
+                max-width: 584px;
+            }
+            #my_search_field:hover {
+                box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            }
+            #my_search_field:focus {
+                box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            }
+            #my_search_field:focus-visible {
+                border: 1px solid #dfe1e5;
+                background: #fff;
+                color: #202124;
+                outline: none;
+
+            }
+            #my_btn {
+                display: flex;
+
+                color: #3c4043;
+                background-color: #f8f9fa;
+                border: 1px solid #f8f9fa;
+                border-radius: 4px;
+                font-family: arial,sans-serif;
+                font-size: 14px;
+                margin: auto;
+                padding: 0 16px;
+                line-height: 27px;
+                height: 36px;
+            }
+            #my_btn:hover {
+                background-color: #f8f9fa;
+                box-shadow: 0 1px 1px rgba(0,0,0,.1);
+                border: 1px solid #dadce0;
+                color: #202124;
+            }
+            .otByu {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+                width: 100%;
+                clear: both;
+            }
+            .yIQOUb {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+                clear: both;
+            }
+            .I1Kbt {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-style: inherit;
+                text-decoration: none;
+                float: left;
+                display: inline-block;
+                min-width: 167px;
+                width: 16%;
+                font-size: 16px;
+                min-height: 42px;
+                font-weight: 500;
+                color: #333;
+                vertical-align: middle;
+            }
+            .lOTAE {
+                font-family: arial,sans-serif;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                text-decoration: none;
+                height: 30px;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .HoCfzc {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                text-decoration: none;
+                float: left;
+                display: inline-block;
+                min-width: 167px;
+                min-height: 41px;
+                vertical-align: middle;
+                width: 50%;
+            }
+            .orcpGe {
+                    font-family: arial,sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    font-style: inherit;
+                    text-decoration: none;
+                    display: inline-block;
+                    float: left;
+                    width: 33%;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #777;
+                    padding-left: 5px;
+                    vertical-align: middle;
+            }
+            .FAcADc {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                text-decoration: none;
+                float: left;
+                display: inline-block;
+                min-width: 167px;
+                width: 16%;
+                height: 42px;
+                color: #222;
+                font-size: 13px;
+                line-height: 16px;
+                vertical-align: middle;
+            }
+            .jYcx0e {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                text-decoration: none;
+                float: left;
+                display: inline-block;
+                min-width: 167px;
+                min-height: 41px;
+                vertical-align: middle;
+                width: 50%;
+            }
+            .PLLUQc {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+                padding-right: 16px;
+            }
+            .jfk-textinput {
+                border-radius: 1px;
+                border: 1px solid #d9d9d9;
+                border-top: 1px solid #c0c0c0;
+                font-size: 13px;
+                height: 25px;
+                padding: 1px 8px;
+                width: 554px;
+                text-align: left;
+            }
+            .cwqNnb {
+                font-family: arial,sans-serif;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                text-decoration: none;
+                display: inline-block;
+                float: left;
+                width: 32%;
+                min-width: 160px;
+                margin: 0 0 8px 1%;
+                color: #555;
+                font-size: 11px;
+                padding-left: 5px;
+                vertical-align: middle;
+                position: relative;
+            }
+            .BFlQMb {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                vertical-align: baseline;
+                text-decoration: none;
+                color: #666;
+                font-family: monospace;
+                font-size: 11px;
+                white-space: pre;
+            }
+            #s1zaZb {
+                font-family: arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+            }
+            .Mza7yc {
+                font-family: arial,sans-serif;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+                max-width: 1140px;
+                min-width: 200px;
+                width: 96%;
+                margin: 40px 2% 0 45px;
+            }
+            .Qy8Xkb {
+                font-family: arial,sans-serif;
+                padding: 0;
+                border: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                vertical-align: baseline;
+                text-decoration: none;
+                margin: 18px 0;
+                clear: both;
+                border-top: 1px solid #ebebeb;
+            }
+            .jfk-button {
+                border-radius: 2px;
+                cursor: default;
+                font-size: 11px;
+                font-weight: bold;
+                text-align: center;
+                white-space: nowrap;
+                outline: 0;
+                color: #fff;
+                padding: 0 12px;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+                background: #357ae8;
+                background-color: #357ae8;
+                background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));
+                border: 1px solid #2f5bb7;
+                border-image: initial;
+                float: right;
+                margin: 10px 0;
+                user-select: none;
+                line-height: 100%;
+                height: 30px;
+                min-width: 120px;
+            }
+            .jfk-button:hover {
+                border-radius: 2px;
+                cursor: default;
+                font-size: 11px;
+                font-weight: bold;
+                text-align: center;
+                white-space: nowrap;
+                outline: 0;
+                box-shadow: none;
+                color: #fff;
+                padding: 0 12px;
+                background-color: #357ae8;
+                background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));
+                border: 1px solid #2f5bb7;
+                border-image: initial;
+                float: right;
+                margin: 10px 0;
+                user-select: none;
+                line-height: 100%;
+                height: 30px;
+                min-width: 120px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="top-right">
+                <a href="index.html">Google Advanced Search</a>
+            </div>
+
+            <div id="search-box">
+                <br>
+                <div class="Mza7yc">
+                    <form action="https://www.google.com/search" id="s1zaZb" method="GET" name="f">
+                        <div class="otByu">
+                            <div class="yIQOUb">
+                                <div class="I1Kbt">
+                                    <div class="lOTAE"><span>Find pages with...</span></div>
+                                </div>
+                                <div class="HoCfzc">&nbsp;</div>
+                                <div class="orcpGe">
+                                    <div class="lOTAE"> To do this in the search box</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="otByu">
+                            <div class="yIQOUb">
+                                <div class="FAcADc">
+                                    <div class="lOTAE"><label for="xX4UFf"> all these words:</label></div>
+                                </div>
+                                <div class="jYcx0e">
+                                    <div class="PLLUQc"><input class="jfk-textinput" value=""
+                                                               autofocus="autofocus"
+                                                               id="xX4UFf" name="as_q" type="text"></div>
+                                </div>
+                                <div class="cwqNnb dulCv">
+                                    <div class="lOTAE"> Type the important words: <span
+                                            class="BFlQMb"> tricolor rat terrier</span></div>
+                                </div>
+                            </div>
+                            <div class="yIQOUb">
+                                <div class="FAcADc">
+                                    <div class="lOTAE"><label for="CwYCWc"> this exact word or
+                                        phrase:</label></div>
+                                </div>
+                                <div class="jYcx0e">
+                                    <div class="PLLUQc"><input class="jfk-textinput" value="" id="CwYCWc"
+                                                               name="as_epq"
+                                                               type="text"></div>
+                                </div>
+                                <div class="cwqNnb dulCv">
+                                    <div class="lOTAE"> Put exact words in quotes: <span
+                                            class="BFlQMb"> "rat terrier"</span></div>
+                                </div>
+                            </div>
+                            <div class="yIQOUb">
+                                <div class="FAcADc">
+                                    <div class="lOTAE"><label for="mSoczb"> any of these words:</label>
+                                    </div>
+                                </div>
+                                <div class="jYcx0e">
+                                    <div class="PLLUQc"><input class="jfk-textinput" value="" id="mSoczb"
+                                                               name="as_oq"
+                                                               type="text"></div>
+                                </div>
+                                <div class="cwqNnb dulCv">
+                                    <div class="lOTAE"> Type <span class="BFlQMb">OR</span> between all the
+                                        words you want:
+                                        <span class="BFlQMb"> miniature OR standard</span></div>
+                                </div>
+                            </div>
+                            <div class="yIQOUb">
+                                <div class="FAcADc">
+                                    <div class="lOTAE"><label for="t2dX1c"> none of these words:</label>
+                                    </div>
+                                </div>
+                                <div class="jYcx0e">
+                                    <div class="PLLUQc"><input class="jfk-textinput" value="" id="t2dX1c"
+                                                               name="as_eq"
+                                                               type="text"></div>
+                                </div>
+                                <div class="cwqNnb dulCv">
+                                    <div class="lOTAE"> Put a minus sign just before words you don't want:
+                                        <span
+                                                class="BFlQMb"> -rodent, -"Jack Russell"</span></div>
+                                </div>
+                            </div>
+                            <div class="yIQOUb"></div>
+                        </div>
+                        <div class="Qy8Xkb"></div>
+                        <div class="otByu">
+                            <div class="yIQOUb">
+                                <div class="FAcADc"></div>
+                                <div class="jYcx0e" style="text-align:right"><input id="CIGjud" name="tbs"
+                                                                                    type="hidden"
+                                                                                    value=""> <input
+                                        class="jfk-button jfk-button-action dUBGpe"
+                                        style="user-select:none;line-height:100%;height:30px;min-width:120px"
+                                        value="Advanced Search" type="submit"></div>
+                                <div class="cwqNnb"></div>
+                            </div>
+                            <div class="yIQOUb"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

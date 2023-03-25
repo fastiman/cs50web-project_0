@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <style>
+            .container {
+                display: flex;              /* establish flex container */
+                flex-direction: column;     /* stack flex items vertically */
+                justify-content: center;    /* center items vertically, in this case */
+                align-items: center;        /* center items horizontally, in this case */
+                height: 300px;
+            }
+            .top-right {
+                align-self: start;
+                margin-left: auto;
+
+            }
+            #search-box {
+
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                align-items: center;
+                box-sizing: border-box;
+            }
+            #my_search_field {
+                width: 584px;
+                font-size: 14px;
+                font-family: arial,sans-serif;
+                color: #202124;
+                display: flex;
+                z-index: 3;
+                height: 44px;
+                background: #fff;
+                border: 1px solid #dfe1e5;
+                box-shadow: none;
+                border-radius: 24px;
+                margin: 0 auto;
+                padding: 0 20px;
+                max-width: 584px;
+            }
+            #my_search_field:hover {
+                box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            }
+            #my_search_field:focus {
+                box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            }
+            #my_search_field:focus-visible {
+                border: 1px solid #dfe1e5;
+                background: #fff;
+                color: #202124;
+                outline: none;
+
+            }
+            .my_btn {
+                display: inline-block;
+                color: #3c4043;
+                background-color: #f8f9fa;
+                border: 1px solid #f8f9fa;
+                border-radius: 4px;
+                font-family: arial,sans-serif;
+                font-size: 14px;
+                margin: auto;
+                padding: 0 16px;
+                line-height: 27px;
+                height: 36px;
+            }
+            #my_btn:hover {
+                background-color: #f8f9fa;
+                box-shadow: 0 1px 1px rgba(0,0,0,.1);
+                border: 1px solid #dadce0;
+                color: #202124;
+            }
+            .FPdoLc {
+                display: block;
+                font-size: 14px;
+                font-family: arial,sans-serif;
+                color: #202124;
+                padding-top: 18px;
+                height: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="top-right">
+                <a href="google-image-search.html">Image Search</a>
+                <a href="google-advanced-search.html">Advanced Search</a>
+            </div>
+
+            <div id="search-box">
+                <form action="https://www.google.com/search">
+                    <input id="my_search_field" type="text" name="q"><br>
+                    <div class="FPdoLc">
+                        <center>
+                            <input class="my_btn" type="submit" value="Google Search">
+                            <input class="my_btn" type="submit" name="btnI"
+                                   value="I'm Feeling Lucky">
+                        </center>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
